@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.1"
 
 nlu:
 - intent: greet
@@ -21,6 +21,14 @@ nlu:
     - meu pedido não chegou
     - o que aconteceu com meu pedido?
 
+- intent: provide_order_number
+  examples: |
+    - Meu número de pedido é [12345](order_number)
+    - O número do meu pedido é [67890](order_number)
+    - Aqui está o número do pedido: [54321](order_number)
+    - Eu gostaria de informar que meu pedido é [98765](order_number)
+    - O pedido que quero verificar é [11223](order_number)
+    
 - intent: inquire_return_policy
   examples: |
     - como posso devolver um produto?

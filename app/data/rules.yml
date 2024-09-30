@@ -5,8 +5,6 @@ rules:
     steps:
       - intent: greet
       - action: utter_greet
-      - intent: inquire_order_status
-      - action: utter_inquire_order_status
 
   - rule: Inquire order status
     steps:

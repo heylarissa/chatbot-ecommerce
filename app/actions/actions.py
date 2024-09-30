@@ -1,22 +1,26 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import EventType
 
 class ActionCheckOrderStatus(Action):
-
     def name(self) -> Text:
         return "action_check_order_status"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        order_number = tracker.get_slot('order_number')
-        # Aqui você pode buscar o status do pedido em um banco de dados ou API
-        # Exemplo de resposta fictícia
-        order_status = "O seu pedido {} está a caminho e deve chegar em 3 dias úteis.".format(order_number)
-        
-        dispatcher.utter_message(text=order_status)
+            domain: Dict[Text, Any]) -> List[EventType]:
+
+        # Extrai o número do pedido da entidade
+        order_number = next(tracker.get_latest_entity_values("order_number"), None)
+
+        if order_number:
+            dispatcher.utter_message(text=f"Ótimo! Um momento, por favor, enquanto verifico o status do seu pedido {order_number}...")
+            # Aqui você deve adicionar a lógica para verificar o status do pedido
+            dispatcher.utter_message(text=f"O seu pedido {order_number} está a caminho e deve chegar em 3 dias úteis.")
+        else:
+            dispatcher.utter_message(text="Desculpe, não consegui entender o número do seu pedido.")
+
         return []
 
 class ActionInquireReturnPolicy(Action):

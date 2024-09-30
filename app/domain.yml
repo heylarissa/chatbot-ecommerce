@@ -1,27 +1,44 @@
-version: "3.0"
+version: "3.1"
 
 intents:
   - greet
+  - goodbye
   - inquire_order_status
+  - provide_order_number
   - inquire_return_policy
   - inquire_promotions
-  - goodbye
+  - inquire_delivery_time
+
+entities:
+  - order_number
 
 responses:
   utter_greet:
     - text: "Olá! Como posso ajudar você hoje?"
 
   utter_inquire_order_status:
-    - text: "Por favor, me forneça o número do seu pedido para que eu possa verificar o status."
+    - text: "Claro! Para isso, por favor, me forneça o número do seu pedido."
 
-  utter_inquire_return_policy:
-    - text: "Você pode devolver produtos em até 30 dias após a compra, desde que estejam em condições originais. Precisa de ajuda com isso?"
+  utter_confirm_order_number:
+    - text: "Você quis dizer o pedido número {order_number}? Posso verificar isso para você."
 
-  utter_inquire_promotions:
-    - text: "Atualmente, temos uma promoção de 20% em todas as roupas de verão! Gostaria de saber mais sobre algum produto específico?"
+  utter_checking_order:
+    - text: "Ótimo! Um momento, por favor, enquanto verifico o status do seu pedido..."
+
+  utter_order_status_processing:
+    - text: "Seu pedido número {order_number} está atualmente em processamento e deve ser enviado em breve."
+
+  utter_provide_delivery_time:
+    - text: "O prazo de entrega é de 5 a 7 dias úteis. Se precisar de mais alguma informação, estou aqui para ajudar!"
 
   utter_goodbye:
-    - text: "Até logo! Se precisar de mais ajuda, estou aqui."
+    - text: "De nada! Se precisar de mais alguma coisa, é só chamar. Até logo!"
+
+  utter_inquire_return_policy:
+    - text: "Você pode devolver o produto em até 30 dias após a compra."
+    
+  utter_inquire_promotions:
+    - text: "No momento, temos uma promoção de 20% em todos os produtos da categoria X!"
 
 actions:
   - action_check_order_status
