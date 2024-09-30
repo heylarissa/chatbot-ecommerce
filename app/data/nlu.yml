@@ -16,8 +16,6 @@ nlu:
     - gostaria de saber o status do meu pedido
     - onde está o meu pedido?
     - me fale sobre o meu pedido
-    - qual é o status do pedido [12345](order_number)?
-    - eu quero saber onde está o pedido [67890](order_number)
     - meu pedido não chegou
     - o que aconteceu com meu pedido?
 
@@ -28,7 +26,7 @@ nlu:
     - Aqui está o número do pedido: [54321](order_number)
     - Eu gostaria de informar que meu pedido é [98765](order_number)
     - O pedido que quero verificar é [11223](order_number)
-    
+
 - intent: inquire_return_policy
   examples: |
     - como posso devolver um produto?
