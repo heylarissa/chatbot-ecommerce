@@ -1,27 +1,124 @@
-version: "3.0"
+version: "3.1"
 
 stories:
   - story: greet and ask for help
     steps:
       - intent: greet
       - action: utter_greet
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+      - intent: inquire_order_status
+      - action: action_check_order_status
+      - intent: goodbye
+      - action: utter_goodbye
 
   - story: inquire about order status
     steps:
       - intent: inquire_order_status
       - action: utter_inquire_order_status
+      - intent: inquire_order_status
+      - action: action_check_order_status
+      - intent: inquire_return_policy
+      - action: utter_inquire_return_policy
+      - intent: goodbye
+      - action: utter_goodbye
 
-  - story: inquire about return policy
+  - story: inquire about return policy and ask for help
     steps:
       - intent: inquire_return_policy
       - action: utter_inquire_return_policy
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+      - intent: inquire_order_status
+      - action: action_check_order_status
+      - intent: goodbye
+      - action: utter_goodbye
 
-  - story: inquire about promotions
+  - story: inquire about promotions and follow up
     steps:
       - intent: inquire_promotions
       - action: utter_inquire_promotions
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+      - intent: inquire_return_policy
+      - action: utter_inquire_return_policy
+      - intent: goodbye
+      - action: utter_goodbye
 
-  - story: goodbye
+  - story: ask about returns and follow up with promotion inquiry
     steps:
+      - intent: inquire_return_policy
+      - action: utter_inquire_return_policy
+      - intent: inquire_promotions
+      - action: utter_inquire_promotions
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: complex order inquiry
+    steps:
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+      - intent: inquire_return_policy
+      - action: utter_inquire_return_policy
+      - intent: inquire_promotions
+      - action: utter_inquire_promotions
+      - intent: inquire_order_status
+      - action: action_check_order_status
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: multiple inquiries
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inquire_promotions
+      - action: utter_inquire_promotions
+      - intent: inquire_return_policy
+      - action: utter_inquire_return_policy
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+      - intent: inquire_order_status
+      - action: action_check_order_status
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: return and promotion questions
+    steps:
+      - intent: inquire_return_policy
+      - action: utter_inquire_return_policy
+      - intent: inquire_promotions
+      - action: utter_inquire_promotions
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+      - intent: inquire_return_policy
+      - action: utter_inquire_return_policy
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: ask about order and promotions
+    steps:
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+      - intent: inquire_promotions
+      - action: utter_inquire_promotions
+      - intent: inquire_order_status
+      - action: action_check_order_status
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: complete conversation
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+      - intent: inquire_return_policy
+      - action: utter_inquire_return_policy
+      - intent: inquire_promotions
+      - action: utter_inquire_promotions
+      - intent: inquire_order_status
+      - action: action_check_order_status
       - intent: goodbye
       - action: utter_goodbye
