@@ -1,0 +1,48 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+    - boa noite
+    - e aí
+    - como você está?
+
+- intent: inquire_order_status
+  examples: |
+    - gostaria de saber o status do meu pedido
+    - onde está o meu pedido?
+    - me fale sobre o meu pedido
+    - qual é o status do pedido [12345](order_number)?
+    - eu quero saber onde está o pedido [67890](order_number)
+    - meu pedido não chegou
+    - o que aconteceu com meu pedido?
+
+- intent: inquire_return_policy
+  examples: |
+    - como posso devolver um produto?
+    - qual é a política de devolução?
+    - quero devolver um item
+    - quais são as instruções para devolução?
+    - posso devolver produtos usados?
+    - como faço uma troca?
+
+- intent: inquire_promotions
+  examples: |
+    - quais são as promoções de hoje?
+    - me fale sobre descontos
+    - vocês têm alguma promoção?
+    - há alguma oferta especial agora?
+    - como posso aproveitar as promoções?
+    - tem desconto para compras acima de R$100?
+
+- intent: goodbye
+  examples: |
+    - obrigado
+    - até logo
+    - tchau
+    - valeu
+    - foi bom falar com você

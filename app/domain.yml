@@ -1,0 +1,30 @@
+version: "3.0"
+
+intents:
+  - greet
+  - inquire_order_status
+  - inquire_return_policy
+  - inquire_promotions
+  - goodbye
+
+responses:
+  utter_greet:
+    - text: "Olá! Como posso ajudar você hoje?"
+
+  utter_inquire_order_status:
+    - text: "Por favor, me forneça o número do seu pedido para que eu possa verificar o status."
+
+  utter_inquire_return_policy:
+    - text: "Você pode devolver produtos em até 30 dias após a compra, desde que estejam em condições originais. Precisa de ajuda com isso?"
+
+  utter_inquire_promotions:
+    - text: "Atualmente, temos uma promoção de 20% em todas as roupas de verão! Gostaria de saber mais sobre algum produto específico?"
+
+  utter_goodbye:
+    - text: "Até logo! Se precisar de mais ajuda, estou aqui."
+
+actions:
+  - action_check_order_status
+  - action_inquire_return_policy
+  - action_inquire_promotions
+  - action_goodbye

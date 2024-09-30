@@ -1,0 +1,27 @@
+version: "3.0"
+
+rules:
+- rule: Greet User
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Inquire Order Status
+  steps:
+  - intent: inquire_order_status
+  - action: action_check_order_status
+
+- rule: Inquire Return Policy
+  steps:
+  - intent: inquire_return_policy
+  - action: utter_return_policy
+
+- rule: Inquire Promotions
+  steps:
+  - intent: inquire_promotions
+  - action: utter_promotions
+
+- rule: Say Goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye

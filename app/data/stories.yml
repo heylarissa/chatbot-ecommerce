@@ -1,0 +1,27 @@
+version: "3.0"
+
+stories:
+  - story: greet and ask for help
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: inquire about order status
+    steps:
+      - intent: inquire_order_status
+      - action: utter_inquire_order_status
+
+  - story: inquire about return policy
+    steps:
+      - intent: inquire_return_policy
+      - action: utter_inquire_return_policy
+
+  - story: inquire about promotions
+    steps:
+      - intent: inquire_promotions
+      - action: utter_inquire_promotions
+
+  - story: goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye

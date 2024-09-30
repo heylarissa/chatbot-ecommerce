@@ -1,1 +1,4 @@
 rasaenv
+app/models
+__pycache__
+app/.rasa/cache/*
